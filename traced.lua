@@ -22,11 +22,13 @@ local function Image(ID, Button)
 	return NewImage
 end
 
+-- Smooth edges with white color
 local function Round2px()
 	local NewImage = Image("http://www.roblox.com/asset/?id=5761488251")
 	NewImage.ScaleType = Enum.ScaleType.Slice
 	NewImage.SliceCenter = Rect.new(2, 2, 298, 298)
-	NewImage.ImageColor3 = Color3.fromRGB(0, 122, 255)  -- Blue color
+	NewImage.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- White color for the background
+	NewImage.BorderSizePixel = 0  -- Ensure no borders
 	return NewImage
 end
 
@@ -36,7 +38,7 @@ local function Shadow2px()
 	NewImage.SliceCenter = Rect.new(17, 17, 283, 283)
 	NewImage.Size = UDim2.fromScale(1, 1) + UDim2.fromOffset(30, 30)
 	NewImage.Position = -UDim2.fromOffset(15, 15)
-	NewImage.ImageColor3 = Color3.fromRGB(0, 102, 204)  -- Slightly darker blue for shadow
+	NewImage.ImageColor3 = Color3.fromRGB(200, 200, 200)  -- Light gray shadow for smooth effect
 	return NewImage
 end
 
@@ -107,7 +109,7 @@ local function Label(Text, Font, Size, Button)
 	Label.BackgroundTransparency = 1
 	Label.TextXAlignment = Enum.TextXAlignment.Left
 	Label.RichText = true
-	Label.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text
+	Label.TextColor3 = Color3.fromRGB(0, 0, 0)  -- Black text for readability
 	return Label
 end
 
